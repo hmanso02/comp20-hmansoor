@@ -14,6 +14,6 @@ function start_game(){
 
   x.drawImage(document.getElementById('source'), 1, 118, 398, 40, 1, 277, 398, 40);
 
-  x.drawImage(document.getElementById('source'), 1, 118, 398, 40, 1, 487, 398, 40);
+  x.drawImage(document.getElementById('source'), 1, 118, 398, 40, 1, 477, 398, 40);
   
 }
