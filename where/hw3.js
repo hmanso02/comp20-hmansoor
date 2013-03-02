@@ -262,6 +262,8 @@ function draw_polyline(){
 }
 
 
+
+
 var x=document.getElementById("map_canvas");
 function getLocation()
   {
