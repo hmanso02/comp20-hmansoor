@@ -1,4 +1,4 @@
-coordinates = [
+poly_coordinates = [
                        {"lat": 42.395428, "lng": -71.142483 , "lat1": 42.39674, "lng1": -71.121815}, 
 		       {"lat": 42.39674, "lng": -71.121815 , "lat1": 42.3884, "lng1": -71.119149 }, 
 		       {"lat": 42.3884, "lng": -71.119149 , "lat1": 42.373362, "lng1": -71.118956}, 
@@ -55,7 +55,7 @@ markers = [];
 
 function draw_stations(){
         var mapOptions = {
-          center: new google.maps.LatLng(42.320685, -71.052391),
+          center: new google.maps.LatLng(42.3884, -71.119149),
           zoom: 12,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
@@ -242,6 +242,8 @@ function draw_stations(){
         });
         markers.push(stat_mark); 
 
+
+
   for (k = 0; k < markers.length; k++){
     markers[k].setMap(map); 
   }
@@ -264,10 +266,10 @@ function draw_stations(){
           var timingss = "";
           for (j = 0; j < parsed.length; j++){
             if (parsed[j]['PlatformKey'] == self.customInfo['north']){
-		    timingsn = "North: " + parsed[j]['TimeRemaining'] + "<br>";          
+		    timingsn = "Northbound: " + parsed[j]['TimeRemaining'] + "<br>";          
             }
             if (parsed[j]['PlatformKey'] == self.customInfo['south']){ 
-		    timingss = "South: " + parsed[j]['TimeRemaining'];
+		    timingss = "Southbound: " + parsed[j]['TimeRemaining'];
             }
           }
 	info.setContent(self.title + "<br>" + timingsn + timingss);
@@ -285,10 +287,10 @@ function draw_stations(){
 }
 
 function draw_polyline(){
-  for (i = 0; i < coordinates.length; i++){
+  for (i = 0; i < poly_coordinates.length; i++){
     var pathcoords = [
-    new google.maps.LatLng(coordinates[i]['lat'], coordinates[i]['lng'] ),
-    new google.maps.LatLng(coordinates[i]['lat1'], coordinates[i]['lng1'] ),];
+    new google.maps.LatLng(poly_coordinates[i]['lat'], poly_coordinates[i]['lng'] ),
+    new google.maps.LatLng(poly_coordinates[i]['lat1'], poly_coordinates[i]['lng1'] ),];
     var path_cent_kend = new google.maps.Polyline({
       path: pathcoords,
       strokeColor: "#FF0000",
@@ -302,6 +304,13 @@ function draw_polyline(){
 Number.prototype.toRad = function() {
    return this * Math.PI / 180;
 }
+
+function roundnum(number, digits) {
+  var mult = Math.pow(10, digits);
+  var num = Math.round(number * mult) / mult;
+  return num;
+}
+
 
 var x=document.getElementById("map_canvas");
 function getLocation() {
@@ -343,9 +352,11 @@ function showPosition(position) {
       Title = coords[i]['title'];
     }
   }
+
+  Min_dist = roundnum(min_dist, 5);
   var self_info = new google.maps.InfoWindow();
   google.maps.event.addListener(self_mark, 'click', function() {
-    self_info.setContent("I am here!  " + "<br>" + "Closest Station: " + Title + "<br>" + "Distance: " + min_dist);
+    self_info.setContent("I am here!  " + "<br>" + "Closest Station: " + Title + "<br>" + "Distance: " + Min_dist + " miles");
     self_info.open(map, self_mark);
   });
 
@@ -381,7 +392,7 @@ function showPosition(position) {
  	locations[j].setMap(map);
         var wal_carm_info = new google.maps.InfoWindow();
     	google.maps.event.addListener(locations[j], 'click', function() {
-          wal_carm_info.setContent(this.title + "<br>" + this.customInfo['info'] + "<br>" + "Distance from you: " + this.customInfo['distance'] );
+          wal_carm_info.setContent(this.title + "<br>" + this.customInfo['info'] + "<br>" + "Distance from you: " + roundnum(this.customInfo['distance'], 5) + " miles" );
           wal_carm_info.open(map, this);
         });
       }
