@@ -1,22 +1,22 @@
 //Data for all the vehicles going left
 vehicles_l = [ 
-              {"veh": { "x": 330, "y": 315, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29, "s": 20}}, 
-              {"veh": { "x": 200, "y": 315, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29, "s": 20}}, 
-              {"veh": { "x": 70, "y": 315, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29, "s": 20}}, 
-              {"veh": { "x": 280, "y": 387, "x_sprite": 106, "y_sprite": 302, "sw": 46, "sh": 18, "w": 46, "h": 29, "s": 20}}, 
-              {"veh": { "x": 150, "y": 387, "x_sprite": 106, "y_sprite": 302, "sw": 46, "sh": 18, "w": 46, "h": 29, "s": 20}}, 
-              {"veh": { "x": 20, "y": 387, "x_sprite": 106, "y_sprite": 302, "sw": 46, "sh": 18, "w": 46, "h": 29, "s": 20}},  
-              {"veh": { "x": 320, "y": 459, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29, "s": 20}},
-              {"veh": { "x": 170, "y": 459, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29, "s": 20}}, 
-              {"veh": { "x": 20, "y": 459, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29, "s": 20}}
+              {"veh": { "x": 330, "y": 315, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29}}, 
+              {"veh": { "x": 200, "y": 315, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29}}, 
+              {"veh": { "x": 70, "y": 315, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29}}, 
+              {"veh": { "x": 280, "y": 387, "x_sprite": 106, "y_sprite": 302, "sw": 46, "sh": 18, "w": 46, "h": 29}}, 
+              {"veh": { "x": 150, "y": 387, "x_sprite": 106, "y_sprite": 302, "sw": 46, "sh": 18, "w": 46, "h": 29}}, 
+              {"veh": { "x": 20, "y": 387, "x_sprite": 106, "y_sprite": 302, "sw": 46, "sh": 18, "w": 46, "h": 29}},  
+              {"veh": { "x": 320, "y": 459, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29}},
+              {"veh": { "x": 170, "y": 459, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29}}, 
+              {"veh": { "x": 20, "y": 459, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29}}
              ]
 //Data for all the vehicles going right
 vehicles_r = [
-              {"veh": { "x": 200, "y": 351, "x_sprite": 10, "y_sprite": 300, "sw": 26, "sh": 22, "w": 26, "h": 29}}, 
-              {"veh": { "x": 120, "y": 351, "x_sprite": 10, "y_sprite": 300, "sw": 26, "sh": 22, "w": 26, "h": 29}}, 
-              {"veh": { "x": 40, "y": 351, "x_sprite": 10, "y_sprite": 300, "sw": 26, "sh": 22, "w": 26, "h": 29}}, 
-              {"veh": { "x": 250, "y": 423, "x_sprite": 82, "y_sprite": 264, "sw": 24, "sh": 26, "w": 24, "h": 29}}, 
-              {"veh": { "x": 170, "y": 423, "x_sprite": 82, "y_sprite": 264, "sw": 24, "sh": 26, "w": 24, "h": 29}}, 
+              {"veh": { "x": 250, "y": 351, "x_sprite": 10, "y_sprite": 300, "sw": 26, "sh": 22, "w": 26, "h": 29}}, 
+              {"veh": { "x": 140, "y": 351, "x_sprite": 10, "y_sprite": 300, "sw": 26, "sh": 22, "w": 26, "h": 29}}, 
+              {"veh": { "x": 30, "y": 351, "x_sprite": 10, "y_sprite": 300, "sw": 26, "sh": 22, "w": 26, "h": 29}}, 
+              {"veh": { "x": 350, "y": 423, "x_sprite": 82, "y_sprite": 264, "sw": 24, "sh": 26, "w": 24, "h": 29}}, 
+              {"veh": { "x": 220, "y": 423, "x_sprite": 82, "y_sprite": 264, "sw": 24, "sh": 26, "w": 24, "h": 29}}, 
               {"veh": { "x": 90, "y": 423, "x_sprite": 82, "y_sprite": 264, "sw": 24, "sh": 26, "w": 24, "h": 29}} 
              ]
 //Data for all the logs. All logs are going left
@@ -45,9 +45,34 @@ goal_sq =    [
               { "x": 267, "y": 65, "w": 28, "h": 28, "is_occupied": 0},
               { "x": 352, "y": 65, "w": 28, "h": 28, "is_occupied": 0}
              ]  
-
-//Determining speed for vehicles goign left. Also adding the detection
-//function for collison
+//Function to initiaize the game parameters
+function init_parameters(){
+  //initializing all the variables for the game
+  num_lives = 4;
+  num_level = 1;  
+  is_game_over = false;
+  time = 200;
+  speed_veh_l = 20;
+  speed_veh_r = 20;
+  speed_log = 30;
+  x_coord_frog = 154;
+  y_coord_frog = 492;
+  num_of_l_veh = 6;
+  score = 0;
+  highscore = 0;
+  rand_snake = Math.floor((Math.random()*3) + 1);
+  img = new Image();
+  img.src = "assets/frogger_sprites.png";
+  image = document.getElementById('game').getContext('2d');
+  //All the sound effects
+  game_over = new Audio('assets/game_over.wav');
+  reached_home = new Audio('assets/success.wav');
+  level_up = new Audio('assets/level_up.wav');
+  death = new Audio('assets/death.wav');
+  motion = new Audio('assets/motion.wav');
+}
+//Function to mobilize the cars going left. Contains a call to 
+//detection function to detect any collisions with the frog
 function mobilize_veh_l(){  
   for (i = 0; i < vehicles_l.length; i++){
     vehicles_l[i]['veh']['x']--;
@@ -57,8 +82,8 @@ function mobilize_veh_l(){
     detection(vehicles_l[i]['veh']['x'], vehicles_l[i]['veh']['y'], vehicles_l[i]['veh']['w'])
   }
 }
-//Determining speed for vehicles goign right. Also adding the detection
-//function for collison
+//Function to mobilize the cars going right. Contains a call to 
+//detection function to detect any collisions with the frog
 function mobilize_veh_r(){  
   for (i = 0; i < vehicles_r.length; i++){
     vehicles_r[i]['veh']['x']++;
@@ -68,7 +93,8 @@ function mobilize_veh_r(){
     detection(vehicles_r[i]['veh']['x'], vehicles_r[i]['veh']['y'], vehicles_r[i]['veh']['w'])
   }
 }
-
+//Function to mobilize the logs. Contains a call to 
+//drowing function to detect if frog is drowning
 function mobilize_log(){  
   for (i = 0; i < logs.length; i++){
     logs[i]['log']['x']++;
@@ -82,83 +108,210 @@ function mobilize_log(){
       turtles[i]['turtle']['x'] = 398;
     }
   }
-  frog_on_log();
+  is_drowning();
 }
-
+//Function to draw vehicles going left
 function draw_veh_l(){
   for (i = 0; i < vehicles_l.length; i++){
-    image.drawImage(document.getElementById('source1'), vehicles_l[i]['veh']['x_sprite'], vehicles_l[i]['veh']['y_sprite'], vehicles_l[i]['veh']['sw'], vehicles_l[i]['veh']['sh'], vehicles_l[i]['veh']['x'], vehicles_l[i]['veh']['y'], vehicles_l[i]['veh']['w'], vehicles_l[i]['veh']['h']);
+    image.drawImage(img, vehicles_l[i]['veh']['x_sprite'], vehicles_l[i]['veh']['y_sprite'], vehicles_l[i]['veh']['sw'], vehicles_l[i]['veh']['sh'], vehicles_l[i]['veh']['x'], vehicles_l[i]['veh']['y'], vehicles_l[i]['veh']['w'], vehicles_l[i]['veh']['h']);
   } 
 }
-
+//Function to draw logs. Also contains a call to draw_snake().
 function draw_log(){
   for (i = 0; i < logs.length; i++){
-    image.drawImage(document.getElementById('source1'), logs[i]['log']['x_sprite'], logs[i]['log']['y_sprite'], logs[i]['log']['sw'], logs[i]['log']['sh'], logs[i]['log']['x'], logs[i]['log']['y'], logs[i]['log']['w'], logs[i]['log']['h']);
+    image.drawImage(img, logs[i]['log']['x_sprite'], logs[i]['log']['y_sprite'], logs[i]['log']['sw'], logs[i]['log']['sh'], logs[i]['log']['x'], logs[i]['log']['y'], logs[i]['log']['w'], logs[i]['log']['h']);
   } 
   draw_snake();
   detection(snake['sn']['x'], snake['sn']['y'], snake['sn']['w']);
 }
-
+//Function to draw turtles
 function draw_turtles(){
   for (i = 0; i < turtles.length; i++){
-    image.drawImage(document.getElementById('source1'), turtles[i]['turtle']['x_sprite'], turtles[i]['turtle']['y_sprite'], turtles[i]['turtle']['sw'], turtles[i]['turtle']['sh'], turtles[i]['turtle']['x'], turtles[i]['turtle']['y'], turtles[i]['turtle']['w'], turtles[i]['turtle']['h']);
+    image.drawImage(img, turtles[i]['turtle']['x_sprite'], turtles[i]['turtle']['y_sprite'], turtles[i]['turtle']['sw'], turtles[i]['turtle']['sh'], turtles[i]['turtle']['x'], turtles[i]['turtle']['y'], turtles[i]['turtle']['w'], turtles[i]['turtle']['h']);
   } 
 }
-
+//Function to draw vehicles going right
 function draw_veh_r(){
   for (i = 0; i < vehicles_r.length; i++){
-    image.drawImage(document.getElementById('source1'), vehicles_r[i]['veh']['x_sprite'], vehicles_r[i]['veh']['y_sprite'], vehicles_r[i]['veh']['sw'], vehicles_r[i]['veh']['sh'], vehicles_r[i]['veh']['x'], vehicles_r[i]['veh']['y'], vehicles_r[i]['veh']['w'], vehicles_r[i]['veh']['h']);
+    image.drawImage(img, vehicles_r[i]['veh']['x_sprite'], vehicles_r[i]['veh']['y_sprite'], vehicles_r[i]['veh']['sw'], vehicles_r[i]['veh']['sh'], vehicles_r[i]['veh']['x'], vehicles_r[i]['veh']['y'], vehicles_r[i]['veh']['w'], vehicles_r[i]['veh']['h']);
   } 
 }
-
-
+//Function to draw snakes. The snake is drawn on one of the logs on
+//one of the three log lanes chosen at random
 function draw_snake(){
   switch(rand_snake){
     case 1:
       snake['sn']['x'] = logs[1]['log']['x'];
       snake['sn']['y'] = logs[1]['log']['y']
-      image.drawImage(document.getElementById('source1'), snake['sn']['x_sprite'], snake['sn']['y_sprite'], snake['sn']['sw'], snake['sn']['sh'], snake['sn']['x'], snake['sn']['y'], snake['sn']['w'], snake['sn']['h']);
+      image.drawImage(img, snake['sn']['x_sprite'], snake['sn']['y_sprite'], snake['sn']['sw'], snake['sn']['sh'], snake['sn']['x'], snake['sn']['y'], snake['sn']['w'], snake['sn']['h']);
       break;
     case 2:
       snake['sn']['x'] = logs[3]['log']['x'];
       snake['sn']['y'] = logs[3]['log']['y']
-      image.drawImage(document.getElementById('source1'), snake['sn']['x_sprite'], snake['sn']['y_sprite'], snake['sn']['sw'], snake['sn']['sh'], snake['sn']['x'], snake['sn']['y'], snake['sn']['w'], snake['sn']['h']);
+      image.drawImage(img, snake['sn']['x_sprite'], snake['sn']['y_sprite'], snake['sn']['sw'], snake['sn']['sh'], snake['sn']['x'], snake['sn']['y'], snake['sn']['w'], snake['sn']['h']);
       break;
     case 3:
       snake['sn']['x'] = logs[5]['log']['x'];
       snake['sn']['y'] = logs[5]['log']['y']
-      image.drawImage(document.getElementById('source1'), snake['sn']['x_sprite'], snake['sn']['y_sprite'], snake['sn']['sw'], snake['sn']['sh'], snake['sn']['x'], snake['sn']['y'], snake['sn']['w'], snake['sn']['h']);
+      image.drawImage(img, snake['sn']['x_sprite'], snake['sn']['y_sprite'], snake['sn']['sw'], snake['sn']['sh'], snake['sn']['x'], snake['sn']['y'], snake['sn']['w'], snake['sn']['h']);
       break;      
   } 
 }
-
-function draw_fly(){
-  
-}
-var g = document.getElementById('source');
+//Drawing the goal squares where the frog needs to reach safely
 function draw_goal_sq(){
-  ctx.fillStyle = "rgb(200,200,0)";
+  image.fillStyle = "rgb(200,200,0)";
   for (i = 0; i < goal_sq.length; i++){
-    ctx.fillRect (goal_sq[i]['x'], goal_sq[i]['y'], goal_sq[i]['w'], goal_sq[i]['h']);
+    image.fillRect (goal_sq[i]['x'], goal_sq[i]['y'], goal_sq[i]['w'], goal_sq[i]['h']);
     if (goal_sq[i]['is_occupied'] == 1){
-      image.drawImage(document.getElementById('source1'), 12, 362, 23, 27, goal_sq[i]['x'], goal_sq[i]['y'], 23, 30);
-     // image.drawImage(g, 2, 3, 23, 27, goal_sq[i]['x'] +30, goal_sq[i]['y'] +30, 23, 30); 
+      image.drawImage(img, 12, 362, 23, 27, goal_sq[i]['x'], goal_sq[i]['y'], 23, 30);
     } 
   }
 }
-
-function hide(){
-  g.style.display= "none";
+//function to detect collision with vehicles
+function detection(veh_x, veh_y, veh_wid){
+  if(((x_coord_frog > veh_x) && (x_coord_frog < veh_x + veh_wid)) && 
+     ((y_coord_frog + 10 > veh_y) && (y_coord_frog + 10 < veh_y + 30))
+   ||(((x_coord_frog + 30 > veh_x) && (x_coord_frog < veh_x)) &&
+     ((y_coord_frog + 10 > veh_y) && (y_coord_frog + 10 < veh_y + 30)))){
+    after_collision();
+  }
 }
-
+//function to detect whether the frog is drowning
+function is_drowning(){
+  if (y_coord_frog < 275 && y_coord_frog > 95){ //that means the frog is on the water
+    is_frog_drown = 0; //boolean to check if frog should drown
+    for (i = 0; i < logs.length; i++){
+      if (((x_coord_frog > logs[i]['log']['x']) && (x_coord_frog < logs[i]['log']['x'] + logs[i]['log']['w'])) && 
+     ((y_coord_frog + 10 > logs[i]['log']['y']) && (y_coord_frog + 10 < logs[i]['log']['y'] + 30))){
+        if (x_coord_frog + 23<= 398){
+          is_frog_drown = 1;
+          x_coord_frog++;
+        }
+        else if(x_coord_frog > logs[i]['log']['x']){
+          is_frog_drown = 1;          
+        }
+      }
+    }
+    for (j = 0; j < turtles.length; j++){
+      if (((x_coord_frog > turtles[j]['turtle']['x']) && (x_coord_frog < turtles[j]['turtle']['x'] + turtles[j]['turtle']['w'])) && 
+     ((y_coord_frog + 10 > turtles[j]['turtle']['y']) && (y_coord_frog + 10 < turtles[j]['turtle']['y'] + 30))){
+        if (x_coord_frog  > 1){
+          is_frog_drown = 1;
+          x_coord_frog--;
+        }
+      }
+    }
+    if (is_frog_drown == 0){
+     after_collision();
+    }
+  } 
+}
+//function to change the level of the player
+function new_level(){
+  all_occupied = 1;
+  for (i = 0; i < goal_sq.length; i++){
+    if (goal_sq[i]['is_occupied'] == 0){
+      all_occupied = 0;
+    }
+  } 
+  if(all_occupied == 1){
+    for (j = 0; j < goal_sq.length; j++){
+      goal_sq[j]['is_occupied'] = 0;
+    }
+    draw_goal_sq();
+    score = score + 1000 + (time*10);
+    num_of_l_veh++;
+    vehicles_l[0]['veh']['s'] = 3;
+    num_level++;
+    time = 200 - 10 * num_level;
+    level_up.play();
+  }
+}
+//function to decrement time
+function decrement_time(){
+  time--;
+}
+//function to check if the frog has reached home safely
+function home_col_detection(){
+  if (y_coord_frog < 95){ //that means the frog is on the water
+    is_frog_home = 0; //boolean to check if frog should die
+    for (j = 0; j < goal_sq.length; j++){
+      if (((x_coord_frog > goal_sq[j]['x']) && (x_coord_frog < goal_sq[j]['x'] + goal_sq[j]['w'])) && goal_sq[j]['is_occupied'] == 0){
+        goal_sq[j]['is_occupied'] = 1;
+        x_coord_frog = 154;
+        y_coord_frog = 492;
+        is_frog_home = 1;
+        score = score + 50;
+        reached_home.play();
+      }
+    }
+    if (is_frog_home == 0){
+      after_collision();     
+    }
+  } 
+}
+//function to change the coordinates of frog after death and
+//reduce the number of lives and playing the death track
+function after_collision(){
+  death.play()
+  x_coord_frog = 154;
+  y_coord_frog = 492;
+  num_lives--;  
+}
+//Function to draw the game layout
+function draw(){
+  //getting the canvas
+  image.fillStyle = "#191970";
+  image.fillRect(1, 2, 398, 276);
+  image.fillStyle = "#000000";
+  image.fillRect(1, 312, 398, 176);
+  image.fillRect(1, 522, 398, 41);
+  //drawing the title
+  image.drawImage(img, 1, 1, 398, 115, 1, 1, 398, 100);
+  //drawing the pavements
+  image.drawImage(img, 1, 118, 398, 40, 1, 277, 398, 40);
+  image.drawImage(img, 1, 118, 398, 40, 1, 487, 398, 40);
+  draw_veh_l();
+  draw_veh_r();
+  draw_log();
+  draw_turtles();
+  draw_goal_sq();
+  home_col_detection();
+  new_level();
+  //drawing the frog on the pavement
+  image.drawImage(img, 12, 362, 23, 27, x_coord_frog, y_coord_frog, 23, 30);
+  //including the text for level, score and highscore 
+  image.fillStyle = "#01fe08";
+  image.font = "bold 25px Arial";
+  image.fillText("Level "+num_level, 65, 542);
+  image.font = "bold 14px Arial";
+  image.fillText("Score: "+score, 2, 558);
+  image.font = "bold 14px Arial";
+  image.fillText("Highscore: "+highscore, 87, 558);
+  image.font = "bold 14px Arial";
+  image.fillText("Time Remaining: "+time, 200, 558);
+  image.font = "bold 14px Arial";
+  if((score > 10000) && (num_lives < 3)){
+    num_lives++;
+  }
+  if (num_lives == -1 || time == 0){
+    game_over.play();
+    r = confirm("Game Over!");
+    if (r){
+      document.location.reload(true);
+    }
+  }
+  //drawing the remaining frog lives
+  for (k = 0; k < num_lives; k++){
+    image.drawImage(img, 12, 330, 33, 27, 15*k, 520, 25, 20);
+  }
+}
 //Function to start the game
 function start_game(){
   //initializing all the variables for the game
   init_parameters(); 
-  //calling the function to draw the game layout
-
+  //Detecting key presses amd moving the frog
   $(document).keydown(function(e){
-  //alert(e.keyCode);
   motion.play();
   switch(e.keyCode){
     case 37: //left stroke
@@ -179,7 +332,6 @@ function start_game(){
         y_coord_frog=y_coord_frog-36;
       }
       score = score +10;
-//console.log(y_coord_frog);
       break;
     case 39: //right stroke
       if (x_coord_frog + 30 > 385) {
@@ -202,191 +354,11 @@ function start_game(){
       break;
     }
   });
+  //changing time
   setInterval(decrement_time, 1000);
-  setInterval(mobilize_veh_l, vehicles_l[0]['veh']['s']);
+  //animating game
+  setInterval(mobilize_veh_l, speed_veh_l);
   setInterval(mobilize_veh_r, speed_veh_r);
   setInterval(mobilize_log, speed_log);
   setInterval(draw, 1);
-}
-
-//Function to initiaize the game parameters
-function init_parameters(){
-  //initializing all the variables for the game
-  num_lives = 3;
-  num_level = 1;  
-  is_game_over = false;
-  time = 200;
-  speed_veh_l = 20;
-  speed_veh_r = 20;
-  speed_log = 40;
-  x_coord_frog = 154;
-  y_coord_frog = 492;
-  num_of_l_veh = 6;
-  score = 0;
-  highscore = 0;
-  rand_snake = Math.floor((Math.random()*3) + 1);
-  rand_time = Math.floor((Math.random()*time) + 1);
-  rand_time1 = Math.floor((Math.random()*time) + 1);
-
-  image = document.getElementById('game');
-
-  ctx = image.getContext("2d");
-  game_over = new Audio('assets/game_over.wav');
-  reached_home = new Audio('assets/success.wav');
-  level_up = new Audio('assets/level_up.wav');
-  death = new Audio('assets/death.wav');
-  motion = new Audio('assets/motion.wav');
-}
-
-
-function detection(veh_x, veh_y, veh_wid){
-  if(((x_coord_frog > veh_x) && (x_coord_frog < veh_x + veh_wid)) && 
-     ((y_coord_frog + 10 > veh_y) && (y_coord_frog + 10 < veh_y + 30))
-   ||(((x_coord_frog + 30 > veh_x) && (x_coord_frog < veh_x)) &&
-     ((y_coord_frog + 10 > veh_y) && (y_coord_frog + 10 < veh_y + 30)))){
-    after_collision();
-
-  }
-}
-
-function frog_on_log(){
-  if (y_coord_frog < 275 && y_coord_frog > 95){ //that means the frog is on the water
-    is_frog_drown = 0; //boolean to check if frog should drown
-    for (i = 0; i < logs.length; i++){
-      if (((x_coord_frog > logs[i]['log']['x']) && (x_coord_frog < logs[i]['log']['x'] + logs[i]['log']['w'])) && 
-     ((y_coord_frog + 10 > logs[i]['log']['y']) && (y_coord_frog + 10 < logs[i]['log']['y'] + 30))){
-        if (x_coord_frog + 23<= 398){
-          is_frog_drown = 1;
-          x_coord_frog++;
-        }
-        else if(x_coord_frog > logs[i]['log']['x']){
-          is_frog_drown = 1;          
-        }
-      }
-    }
-    for (j = 0; j < turtles.length; j++){
-      if (((x_coord_frog > turtles[j]['turtle']['x']) && (x_coord_frog < turtles[j]['turtle']['x'] + turtles[j]['turtle']['w'])) && 
-     ((y_coord_frog + 10 > turtles[j]['turtle']['y']) && (y_coord_frog + 10 < turtles[j]['turtle']['y'] + 30))){
-        if (x_coord_frog  > 1){
-          is_frog_drown = 1;
-          x_coord_frog--;
-        }
-       // else if(x_coord_frog > turtles[i]['turtle']['x']){
-       //   is_frog_drown = 1;          
-       // }
-      }
-    }
-    if (is_frog_drown == 0){
-     after_collision();
-    }
-  } 
-}
-
-function new_level(){
-  all_occupied = 1;
-  for (i = 0; i < goal_sq.length; i++){
-    if (goal_sq[i]['is_occupied'] == 0){
-      all_occupied = 0;
-    }
-  } 
-  if(all_occupied == 1){
-    for (j = 0; j < goal_sq.length; j++){
-      goal_sq[j]['is_occupied'] = 0;
-    }
-    draw_goal_sq();
-    score = score + 1000 + time;
-    speed_veh_l = 5;
-    speed_veh_r = 5;
-    speed_log = 10;
-    num_of_l_veh++;
-    vehicles_l[0]['veh']['s'] = 3;
-    num_level++;
-    time = 200 - 10 * num_level;
-    level_up.play();
-  }
-}
-
-function decrement_time(){
-  time--;
-}
-
-function home_col_detection(){
-  if (y_coord_frog < 95){ //that means the frog is on the water
-    is_frog_home = 0; //boolean to check if frog should die
-    for (j = 0; j < goal_sq.length; j++){
-      if (((x_coord_frog > goal_sq[j]['x']) && (x_coord_frog < goal_sq[j]['x'] + goal_sq[j]['w'])) && goal_sq[j]['is_occupied'] == 0){
-        goal_sq[j]['is_occupied'] = 1;
-        x_coord_frog = 154;
-        y_coord_frog = 492;
-        is_frog_home = 1;
-        score = score + 50;
-        reached_home.play();
-      }
-    }
-    if (is_frog_home == 0){
-      after_collision();     
-    }
-  } 
-
-}
-
-function after_collision(){
-  death.play()
-  x_coord_frog = 154;
-  y_coord_frog = 492;
-  num_lives--;  
-}
-
-//Function to draw the game layout
-function draw(){
-  //getting the canvas
-  ctx.fillStyle = "#191970";
-  ctx.fillRect(1, 2, 398, 276);
-  ctx.fillStyle = "#000000";
-  ctx.fillRect(1, 312, 398, 176);
-  ctx.fillRect(1, 522, 398, 41);
-  image = document.getElementById('game').getContext('2d');
-  //drawing the title
-  image.drawImage(document.getElementById('source1'), 1, 1, 398, 115, 1, 1, 398, 100);
-  //drawing the pavements
-  image.drawImage(document.getElementById('source1'), 1, 118, 398, 40, 1, 277, 398, 40);
-  image.drawImage(document.getElementById('source1'), 1, 118, 398, 40, 1, 487, 398, 40);
- 
-  draw_veh_l();
-  draw_veh_r();
-  draw_log();
-  draw_turtles();
-  draw_goal_sq();
-  home_col_detection();
-  new_level();
-
-  //drawing the frog on the pavement
-  //including the text for level, score and highscore 
-  image.drawImage(document.getElementById('source1'), 12, 362, 23, 27, x_coord_frog, y_coord_frog, 23, 30);
-  image.fillStyle = "#01fe08";
-  image.font = "bold 25px Arial";
-  image.fillText("Level "+num_level, 54, 542);
-  image.font = "bold 14px Arial";
-  image.fillText("Score: "+score, 2, 558);
-  image.font = "bold 14px Arial";
-  image.fillText("Highscore: "+highscore, 87, 558);
-  image.font = "bold 14px Arial";
-  image.fillText("Time Remaining: "+time, 200, 558);
-  image.font = "bold 14px Arial";
-  if (num_lives == -1 || time == 0){
-    game_over.play();
-    r = confirm("Game Over");
-    if (r){
-      document.location.reload(true);
-    }
-    else {
-    speed_log = 0;
-    speed_Veh_l = 0;
-    speed_veh_r = 0;      
-    }
-  }
-  //drawing the remaining frog lives
-  for (k = 0; k < num_lives; k++){
-    image.drawImage(document.getElementById('source1'), 12, 330, 33, 27, 15*k, 520, 25, 20);
-  }
 }
