@@ -3,11 +3,11 @@ vehicles_l = [
               {"veh": { "x": 330, "y": 315, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29, "s": 20}}, 
               {"veh": { "x": 200, "y": 315, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29, "s": 20}}, 
               {"veh": { "x": 70, "y": 315, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29, "s": 20}}, 
-              {"veh": { "x": 130, "y": 459, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29, "s": 20}}, 
-              {"veh": { "x": 80, "y": 459, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29, "s": 20}}, 
               {"veh": { "x": 280, "y": 387, "x_sprite": 106, "y_sprite": 302, "sw": 46, "sh": 18, "w": 46, "h": 29, "s": 20}}, 
               {"veh": { "x": 150, "y": 387, "x_sprite": 106, "y_sprite": 302, "sw": 46, "sh": 18, "w": 46, "h": 29, "s": 20}}, 
               {"veh": { "x": 20, "y": 387, "x_sprite": 106, "y_sprite": 302, "sw": 46, "sh": 18, "w": 46, "h": 29, "s": 20}},  
+              {"veh": { "x": 320, "y": 459, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29, "s": 20}},
+              {"veh": { "x": 170, "y": 459, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29, "s": 20}}, 
               {"veh": { "x": 20, "y": 459, "x_sprite": 10, "y_sprite": 266, "sw": 27, "sh": 19, "w": 27, "h": 29, "s": 20}}
              ]
 //Data for all the vehicles going right
@@ -49,7 +49,7 @@ goal_sq =    [
 //Determining speed for vehicles goign left. Also adding the detection
 //function for collison
 function mobilize_veh_l(){  
-  for (i = 0; i < num_of_l_veh; i++){
+  for (i = 0; i < vehicles_l.length; i++){
     vehicles_l[i]['veh']['x']--;
     if (vehicles_l[i]['veh']['x'] == -vehicles_l[i]['veh']['w']){
       vehicles_l[i]['veh']['x'] = 398;
@@ -86,7 +86,7 @@ function mobilize_log(){
 }
 
 function draw_veh_l(){
-  for (i = 0; i < num_of_l_veh; i++){
+  for (i = 0; i < vehicles_l.length; i++){
     image.drawImage(document.getElementById('source1'), vehicles_l[i]['veh']['x_sprite'], vehicles_l[i]['veh']['y_sprite'], vehicles_l[i]['veh']['sw'], vehicles_l[i]['veh']['sh'], vehicles_l[i]['veh']['x'], vehicles_l[i]['veh']['y'], vehicles_l[i]['veh']['w'], vehicles_l[i]['veh']['h']);
   } 
 }
@@ -159,6 +159,7 @@ function start_game(){
 
   $(document).keydown(function(e){
   //alert(e.keyCode);
+  motion.play();
   switch(e.keyCode){
     case 37: //left stroke
       if (x_coord_frog - 30 < 0) {
@@ -230,7 +231,11 @@ function init_parameters(){
   image = document.getElementById('game');
 
   ctx = image.getContext("2d");
-
+  game_over = new Audio('assets/game_over.wav');
+  reached_home = new Audio('assets/success.wav');
+  level_up = new Audio('assets/level_up.wav');
+  death = new Audio('assets/death.wav');
+  motion = new Audio('assets/motion.wav');
 }
 
 
@@ -272,7 +277,7 @@ function frog_on_log(){
       }
     }
     if (is_frog_drown == 0){
-//      after_collision();
+     after_collision();
     }
   } 
 }
@@ -297,7 +302,7 @@ function new_level(){
     vehicles_l[0]['veh']['s'] = 3;
     num_level++;
     time = 200 - 10 * num_level;
-
+    level_up.play();
   }
 }
 
@@ -315,6 +320,7 @@ function home_col_detection(){
         y_coord_frog = 492;
         is_frog_home = 1;
         score = score + 50;
+        reached_home.play();
       }
     }
     if (is_frog_home == 0){
@@ -325,6 +331,7 @@ function home_col_detection(){
 }
 
 function after_collision(){
+  death.play()
   x_coord_frog = 154;
   y_coord_frog = 492;
   num_lives--;  
@@ -367,6 +374,7 @@ function draw(){
   image.fillText("Time Remaining: "+time, 200, 558);
   image.font = "bold 14px Arial";
   if (num_lives == -1 || time == 0){
+    game_over.play();
     r = confirm("Game Over");
     if (r){
       document.location.reload(true);
