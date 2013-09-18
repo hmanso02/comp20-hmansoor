@@ -1,34 +1,54 @@
-Hamid Mansoor 
-Comp 20
-Assignment 4
+Hamid Mansoor
+Comp 120 
+Assignment 1
 
-1) To the best of my knowledge, everything has been implemented correctly
-   as specified in the assignment. 
-   - I have rectified a mistake I made in assignment 2 which was not
-     making image a variable. 
-   - All the vehicles, logs and turtles move correctly across the screen. 
-   - The frog responds to key presses. 
-   - All colisions and drownings are correctly detected.
-   - The scoring has been implemented as specified. 
-   - The user is given 5 lives at the beginning of the game.
-   - If a user loses all their lives, the user is notified by a confirm 
-     box about this. Selecting OK on the box restarts the game. 
+To the best of my knowledge, everything works as specified. It
+took me approximately 5 hours to complete this assignment. 
 
-   I have added a few additional features as specified:
-      a) Sound. The program has different sounds for frog moving, death,
-         level up, and getting home safely. 
-      b) Level Progrssion. Whenever the player takes 5 frogs safely 
-         home, the level is increased and the user gains a 1000
-         points. The user also has 20 seconds lesser for each new level. 
-         After completing a level, a player is awarded 10 points for every
-         second left. 
-      c) Timing. The user has a specified amount of time to complete each
-         level. The game starts at 200 s for level 1. For each new level, 
-         the user has 20 seconds lesser.
-      d) Snakes. In every game, a snake randomly appears on one of the 
-         logs in the three log lanes. Touching the snake results in death.
-         The snake is stationary. 
+1) I minified all my js and CSS files using the tools listed 
+   below in part 4. I also organized the content by putting CSS on 
+   top of the  index.html and js files at the bottom. All my CSS and 
+   js files external. I compressed the frogger_sprites.png file. I 
+   also included offline caching. 
 
-2) I discussed the assignment with Haris Iqbal.
+2) I made a basic cache.manifest file which tells the browser to
+   store all the js, CSS, HTML and image files in the offline cache.
+   I took help from the cache tutorial provided and I emptied the cache
+   to make sure the browser asked for permission every time to store
+   files on the local machine. 
+ 	
+3) These are the tools that I used: 
+    -> Google Closure Tools to minify game.js
+    -> http://www.csscompressor.com/ to minify style.css
+    -> http://refresh-sf.com/yui/ to combine both the js files in my
+       game.
+    -> http://tinypng.org/ to compress the frogger_sprites.png image.
 
-3) I spent approximately 15 hours on this assignment.
+4) The loading time is a bit quicker because of formating and 
+   compressing the code. In addition, using a compressed image
+   means that less space is used so better loading time. The various
+   numbers provided by different tools used are listed below: 
+ 
+   -> Google Closure Tools
+      Original Size: 	2.86KB gzipped (13KB uncompressed)
+      Compiled Size: 	1.93KB gzipped (7.7KB uncompressed)
+      Saved 30.30% off the gzipped size (39.29% without gzip)
+
+   -> http://www.csscompressor.com/
+      Compression ratio: 0.174KB/0.233KB = 25.3% (-59 Bytes)
+
+   -> http://refresh-sf.com/yui/
+      combined both js files 
+      the ratio was actually negative
+      the file was actually bigger so I did not keep the modified 
+      file
+
+   -> http://tinypng.org/
+      frogger_sprites.png
+      Original Size: 33.7 KB
+      Compressed Size: 13.6 KB
+
+5) Since I am using an offline cache, it can be easily corrupted by 
+   a large file. Also, compressing the image may lower its quality. 
+   Apart from that, minifying the javaScript files sometimes leads
+   to altered functionality of the code. 
